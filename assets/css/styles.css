@@ -1,0 +1,26 @@
+body {
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:14px;
+  line-height:1.42857143;
+  color:#333;
+  background-color:#fff;
+  background-image:url(../../assets/img/tv-color-bars.jpg);
+  margin-top:50px;
+}
+
+.container .jumbotron, .container-fluid .jumbotron {
+  padding-right:15px;
+  padding-left:15px;
+  border-radius:6px;
+  background-image:url(../../assets/img/cherry-wood-paneling.jpg);
+  color:#fff;
+  font-family:'Press Start 2P';
+}
+
+.container {
+  padding-right:15px;
+  padding-left:15px;
+  margin-right:auto;
+  margin-left:auto;
+}
+

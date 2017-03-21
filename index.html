@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">TV GUIDE</h1>
+            <p class="text-center">the future of television</p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Showtimes </h3></div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Show </th>
+                                        <th>Channel </th>
+                                        <th>Frequency(min)</th>
+                                        <th>Next Showing</th>
+                                        <th>Minutes Away</th>
+                                        <th> </th>
+                                        <th> </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="shows-table"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Show</h3></div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="control-label">Show Name</label>
+                                <input class="form-control" type="text" id="showNameInput">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Channel </label>
+                                <select class="form-control" id="channelInput">
+                                    <optgroup label="Channels">
+                                        <option value="FOX" selected="">FOX</option>
+                                        <option value="UPN">UPN</option>
+                                        <option value="TNT">TNT</option>
+                                        <option value="PBS">PBS</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">First Showing (HH:mm AM/PM)</label>
+                                <input class="form-control" type="time" id="firstShowingInput">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Frequency (min)</label>
+                                <input class="form-control" type="number" id="frequencyInput">
+                            </div>
+                            <button class="btn btn-default btn-lg" type="button" id="submit" data-toggle="modal">Submit </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" role="dialog" tabindex="-1" id="missingInputsModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p id="showNameModal"> </p>
+                        <p id="firstShowingModal"> </p>
+                        <p id="frequencyModal"> </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" role="dialog" tabindex="-1" id="editModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="control-label">Show Name</label>
+                                <input class="form-control" type="text" id="showNameUpdate">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Channel </label>
+                                <select class="form-control" id="channelUpdate">
+                                    <optgroup label="Channels">
+                                        <option value="FOX" selected="">FOX</option>
+                                        <option value="UPN">UPN</option>
+                                        <option value="TNT">TNT</option>
+                                        <option value="PBS">PBS</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">First Showing (HH:mm AM/PM)</label>
+                                <input class="form-control" type="time" id="firstShowingUpdate">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Frequency (min)</label>
+                                <input class="form-control" type="number" id="frequencyUpdate">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" id="update" data-dismiss="modal">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

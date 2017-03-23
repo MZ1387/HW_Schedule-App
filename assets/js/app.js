@@ -143,14 +143,10 @@ $(document).ready(function() {
         firstShowing = $("#firstShowingInput").val().trim();
         frequency = $("#frequencyInput").val().trim();
 
-        // console.log(showName);
-        // console.log(channel);
-        // console.log(firstShowing);
-        // console.log(frequency);
-
-        console.log(Boolean(showName === ""));
-        console.log(Boolean(firstShowing === ""));
-        console.log(Boolean(frequency === ""));
+        // clears the modal paragraphs before filling it with what's required
+        $("#showNameModal").html('');
+        $("#firstShowingModal").html('');
+        $("#frequencyModal").html('');
 
         // if statement for empty inputs
         if (showName === "" || firstShowing === "" || frequency === "") {
